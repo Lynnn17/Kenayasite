@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import bgpanjang from '../../assets/bgwcmpanjang.png';
+import bgpanjang from '../../assets/bgungu.jpg';
 
 const Welcome = () => {
   const [dots, setDots] = useState([]);
@@ -32,24 +32,9 @@ const Welcome = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          animation: 'bgMove 20s linear infinite', // Added background move animation
         }}
       >
         {/* Floating dots animation */}
-        {dots.map((dot, index) => (
-          <div
-            key={index}
-            className="absolute bg-[#4FCAFF] rounded-full opacity-75"
-            style={{
-              bottom: '-10%', // Start from below the section
-              left: `${dot.left}%`, // Random horizontal position
-              width: `${dot.size}px`,
-              height: `${dot.size}px`,
-              animation: `floatUp ${5 + dot.size}s ease-in infinite`,
-              animationDelay: `${dot.delay}s`,
-            }}
-          ></div>
-        ))}
 
         <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-6 lg:px-16">
           {/* Text Section */}
@@ -60,18 +45,15 @@ const Welcome = () => {
                   textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
               >
-                Desain Berkelas, Hasil Tuntas -{" "}
-                <span className="text-[#38BDF8]">Hanya di Grafistix</span>
+                Website Interaktif, Kinerja Inovatif -{" "}
+                <span className="text-[#38BDF8]">Kenayasite Solusi Terdepan</span>
               </h1>
               <p
                 className={`font-sans text-slate-400 text-[15px] md:text-[20px] lg:text-1 mb-8 leading-relaxed text-justify transition-opacity duration-1000 ease-out transform ${
                   textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
               >
-                Platform desain grafis online yang mengutamakan kualitas dan
-                kepuasan pelanggan. Kami menghadirkan solusi desain profesional,
-                mulai dari logo hingga materi branding, yang dikerjakan dengan
-                cepat, efisien, dan tanpa ribet.
+                Platform pelayanan jasa berkualitas, interaktif, dan inovatif untuk memenuhi kebutuhan bisnis Anda. Dapatkan solusi digital yang efektif dan efisien untuk memaksimalkan potensi bisnis Anda.
               </p>
               <div className="flex justify-center gap-4">
                 <a
@@ -82,20 +64,9 @@ const Welcome = () => {
                     textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                   }`}
                 >
-                  Konsultasi Gratis
+                  Hi Kenaya!
                 </a>
 
-                <a
-                  href="/layanan"
-                  className={`font-sans text-center bg-transparent border border-[#38BDF8] text-[#38BDF8] px-6 py-3 rounded-md font-semibold hover:bg-[#8CDDFF] transition-all duration-500 ease-in-out hover:scale-105 hover:text-black transition transform flex items-center justify-center ${
-                    textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-                  }`}
-                  style={{
-                    minHeight: '50px', // Atur tinggi minimal jika diperlukan
-                  }}
-                >
-                  Selengkapnya
-                </a>
               </div>
             </div>
           </center>

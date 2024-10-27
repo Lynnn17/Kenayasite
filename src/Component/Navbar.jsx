@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/kenaya.png";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
@@ -40,8 +40,8 @@ const Navbar = () => {
       >
         {/* Logo Section */}
         <div className="flex items-center">
-          <img className="w-[40px]" src={logo} alt="Logo" />
-          <span className="ml-3 text-xl font-bold text-white">Grafistix</span>
+          <img className="w-[30px]" src={logo} alt="Logo" />
+          <span className="ml-3 text-xl font-bold text-white">Kenayasite</span>
         </div>
 
         {/* Links for Desktop */}
