@@ -1,73 +1,82 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function Chatbot() {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
+const Chatbot = () => {
+  const [responseData, setResponseData] = useState(null);
+  const [query, setQuery] = useState("");
+  const [chatHistory, setChatHistory] = useState([]);
 
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
+  const handleInputChange = (e) => setQuery(e.target.value);
 
-  const handleSendMessage = async () => {
-    if (input.trim() === "") return;
-
-    // Add the user message to the messages array
-    setMessages([...messages, { role: "user", text: input }]);
+  const handleSendQuery = async () => {
+    const options = {
+      method: "POST",
+      url: "https://chatgpt-gpt4-ai-chatbot.p.rapidapi.com/ask",
+      headers: {
+        "x-rapidapi-key": "96dfa92815mshd651d70c242f75bp1d4073jsn3437b8949e42",
+        "x-rapidapi-host": "chatgpt-gpt4-ai-chatbot.p.rapidapi.com",
+        "Content-Type": "application/json",
+      },
+      data: {
+        query: query,
+      },
+    };
 
     try {
-      // Send the user message to the ChatGPT API
-      const response = await axios.post(
-        "https://api.openai.com/v1/engines/davinci-codex/completions",
-        {
-          prompt: `User: ${input}\nChatGPT:`,
-          max_tokens: 150,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization:
-              "Bearer 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",
-          },
-        }
-      );
-
-      // Extract the bot response from the API response
-      const botResponse = response.data.choices[0].text;
-
-      // Add the bot response to the messages array
-      setMessages([...messages, { role: "bot", text: botResponse }]);
-
-      // Clear the input field
-      setInput("");
+      const response = await axios.request(options);
+      setResponseData(response.data);
+      setChatHistory((prev) => [
+        ...prev,
+        { query, response: response.data.response },
+      ]);
+      setQuery(""); // Clear input after sending
     } catch (error) {
-      console.error("Error sending message:", error);
+      console.error("Error fetching data:", error);
     }
   };
 
   return (
-    <div className="chatbot">
-      <div className="chatbox">
-        <div className="messages">
-          {messages.map((message, index) => (
-            <div key={index} className="message">
-              {message.role === "bot" ? (
-                <div className="bot-message">{message.text}</div>
-              ) : (
-                <div className="user-message">{message.text}</div>
-              )}
+    <div className="max-w-2xl mx-auto p-4 bg-gray-100 min-h-screen">
+      <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
+        ChatGPT Chat
+      </h1>
+
+      <div className="flex items-center space-x-4 mb-4">
+        <input
+          type="text"
+          className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Type your question..."
+          value={query}
+          onChange={handleInputChange}
+        />
+        <button
+          onClick={handleSendQuery}
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+        >
+          Send
+        </button>
+      </div>
+
+      <div className="bg-white p-4 rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold mb-4 text-gray-700">
+          Chat History
+        </h2>
+
+        <div className="space-y-4">
+          {chatHistory.map((chat, index) => (
+            <div key={index} className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-sm font-semibold text-gray-600">
+                <strong>Query:</strong> {chat.query}
+              </p>
+              <p className="text-sm text-gray-800 mt-1">
+                <strong>Response:</strong> {chat.response}
+              </p>
             </div>
           ))}
         </div>
-        <input
-          type="text"
-          value={input}
-          onChange={handleInputChange}
-          placeholder="Type a message..."
-        />
-        <button onClick={handleSendMessage}>Send</button>
       </div>
     </div>
   );
-}
+};
 
 export default Chatbot;
