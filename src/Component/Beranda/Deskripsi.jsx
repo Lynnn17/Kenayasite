@@ -107,10 +107,10 @@ const Deskripsi = () => {
       <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8 mt-16">
       <div className="text-center mx-auto max-w-2xl">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Apa kata klien kami
+          Apa kata klien kami?
         </h2>
         <p className="mt-2 text-lg leading-7 text-gray-600">
-          Dengar langsung dari bisnis yang mempercayai layanan kami.
+          Dengar langsung dari pebisnis hebat yang mempercayai layanan kami.
         </p>
       </div>
 
@@ -124,7 +124,7 @@ const Deskripsi = () => {
             name: "Gumi",
             company: "Universitas Negeri Surabaya",
             role: "Mahasiswa",
-            feedback: "Layanan desain grafis berkualitas.",
+            feedback: "Website berkualitas.",
             image: klien1 // Add John's profile image
           },
           {
@@ -138,14 +138,14 @@ const Deskripsi = () => {
             name: "Plufy",
             company: "Universitas Negeri Surabaya",
             role: "Mahasiswa",
-            feedback: "Portofolio mengesankan, keahlian beragam proyek.",
+            feedback: "Website mengesankan, keahlian beragam proyek.",
             image: klien3 // Add Emily's profile image
           },
           {
             name: "Qyuu",
             company: "Universitas Negeri Surabaya",
             role: "Mahasiswa",
-            feedback: "Kualitas visual unggul, bisnis menonjol.",
+            feedback: "Kualitas unggul, bisnis profit.",
             image: klien4 // Add Michael's profile image
           },
           {
@@ -202,15 +202,11 @@ const Deskripsi = () => {
         ))}
       </div>
       </div>
-      {/* Poster Section */}
-      <div className="mt-12 md:mt-13 text-center">
-        <img className="w-[110%] md:w-[130%] lg:w-[115%] mx-auto rounded-lg shadow-lg hover:scale-105 transition-transform" src={poster} alt="Refa Setyagama Abdillah" />
-      </div>
 
       {/* Background Animation Styles */}
       <style jsx>{`
         .animated-gradient-bg {
-          background: linear-gradient(45deg, #38BDF8, #A6E4FF, #FFFFFF, #A6E4FF);
+          background: linear-gradient(45deg, #af8cff, #d8a6ff, #FFFFFF, #deb8ff);
           background-size: 400% 400%;
           animation: gradientAnimation 10s ease infinite;
         }

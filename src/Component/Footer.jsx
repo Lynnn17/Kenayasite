@@ -14,13 +14,13 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-semibold mb-4">Grafistix</h3>
+            <h3 className="text-2xl font-semibold mb-4">Kenayasite</h3>
             <p className="text-sm mb-4">
-              Kami menyediakan solusi desain grafis yang cepat, kreatif, dan
+              Kami menyediakan solusi pembuatan dan pemeliharaan website yang cepat, interaktif, dan
               terjangkau dengan jaminan kepuasan.
             </p>
             <p className="text-sm">
-              Dapatkan desain berkualitas untuk kebutuhan Anda dengan layanan
+              Dapatkan website berkualitas untuk kebutuhan Anda dengan layanan
               yang profesional.
             </p>
           </div>
@@ -30,10 +30,10 @@ const Footer = () => {
             <h3 className="text-2xl font-semibold mb-4">Layanan Kami</h3>
             <ul className="space-y-1">
               {[
-                { name: "Desain Logo", icon: "🎨" },
-                { name: "Desain Custom", icon: "🌟" },
-                { name: "Desain Instagram", icon: "📱" },
-                { name: "Desain Merchandise", icon: "🎁" },
+                { name: "Pembuatan Website", icon: "🎨" },
+                { name: "Optimisasi Mesin Pencari", icon: "🌟" },
+                { name: "Pemeliharaan Website", icon: "📱" },
+                { name: "Keamanan Website", icon: "🎁" },
               ].map((service, index) => (
                 <li key={index} className="flex items-center">
                   <span className="text-lg">{service.icon}</span>
@@ -55,28 +55,28 @@ const Footer = () => {
             <li className="flex items-center">
             <span className="text-lg">✉</span>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=refanjie02@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com"
               className="ml-5 hover:text-[#6eacda] transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
-              refanjie02@gmail.com
+              bingarpuri@gmail.com
             </a>
           </li>
           <li className="flex items-center">
             <span className="text-lg">📞</span>
             <a
-              href="https://wa.me/6283112080715"
+              href="https://wa.me/6282244708683"
               className="ml-3 hover:text-[#6eacda] transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
-              +62 831-1208-0715
+              +62 822-4470-8683
             </a>
           </li>
               <li className="flex items-center">
                 <span className="text-lg">📍</span>
-                <a href="https://maps.app.goo.gl/LnkHQ35PHxKsr5Kz8" className="hover:text-[#6eacda] transition duration-300 ml-3">Jl. Ketintang, Ketintang, Kec. Gayungan, Surabaya</a>
+                <a href="https://maps.app.goo.gl/btg9nEiRvHDDporV9" className="hover:text-[#6eacda] transition duration-300 ml-3">Jl. Gubernur Sunandar Priyosudarmo No. 20, Kec. Krian, Kab. Sidoarjo</a>
               </li>
             </ul>
           </div>
@@ -85,7 +85,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-semibold mb-4">Berlangganan</h3>
             <p className="text-sm mb-4">
-              Dapatkan tips desain, penawaran, dan update terbaru langsung ke
+              Dapatkan tips layanan Website, penawaran, dan update terbaru langsung ke
               inbox Anda.
             </p>
             <div className="group mt-4">
@@ -104,7 +104,7 @@ const Footer = () => {
         {/* Tombol */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Grafistix. All rights reserved.
+            © {new Date().getFullYear()} PT Kenaya Perkasa TBK. All rights reserved.
           </p>
 
           {/* Social Media */}
@@ -118,7 +118,7 @@ const Footer = () => {
               {
                 name: "Instagram",
                 icon: ig,
-                url: "https://www.instagram.com/mutiangell_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+                url: "https://www.instagram.com/bingarkp/",
               },
               {
                 name: "LinkedIn",
@@ -145,7 +145,7 @@ const Footer = () => {
           
           <div className="group mt-4">
               <a
-                href="https://wa.me/6283112080715"
+                href="https://wa.me/6282244708683"
                 className="inline-flex items-center justify-center px-6 py-2 bg-[#6eacda] text-black font-bold border border-gray-700 rounded-full transition-all duration-500 ease-in-out hover:text-white hover:scale-110 hover:bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg"
               >
                 Konsultasi Gratis
