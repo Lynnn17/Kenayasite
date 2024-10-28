@@ -83,17 +83,17 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="flex flex-col h-full md:h-screen bg-[#0F172A] py-4">
+    <div className="flex flex-col h-full bg-[#0F172A]  py-4">
       <Navbar />
 
-      <main className="flex-grow flex">
-        <div className="w-full max-w-2xl mx-auto p-4 flex flex-col">
+      <main className="flex-grow flex  ">
+        <div className="w-full max-w-2xl mx-auto p-4 flex flex-col h-full  ">
           {/* Bagian Chat History */}
           <div className="flex-1 overflow-y-auto bg-white rounded-lg shadow-md p-4 ">
             <h2 className="text-xl font-semibold mb-4 text-gray-700">
               Chat History
             </h2>
-            <div className="space-y-4 p-4 bg-gray-50 dark:bg-gray-900 h-[500px] md:h-[95%] xl:h-[90%] overflow-y-auto rounded-lg shadow-md">
+            <div className="space-y-4 p-4 bg-gray-50 dark:bg-gray-900 h-[500px] md:h-[850px] lg:h-[500px] overflow-y-auto rounded-lg shadow-md">
               {chatHistory.map((chat, index) => (
                 <div key={index} className="space-y-2">
                   {/* Query (Pesan pengguna) */}
@@ -125,7 +125,7 @@ const Chatbot = () => {
                               : "bg-red-200 dark:bg-red-700"
                           } rounded-bl-none`}
                         >
-                          <p className="text-sm">{chat.response}</p>
+                          <div className="text-sm">{chat.response}</div>
                           <p className="text-xs mt-2 text-gray-400 text-right">
                             {new Date(chat.timestamp).toLocaleTimeString()}
                           </p>
