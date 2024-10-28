@@ -1,80 +1,161 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Navbar from "../Component/Navbar";
+import { FiSend } from "react-icons/fi";
 import axios from "axios";
 
 const Chatbot = () => {
-  const [responseData, setResponseData] = useState(null);
-  const [query, setQuery] = useState("");
-  const [chatHistory, setChatHistory] = useState([]);
+  const [query, setQuery] = useState(""); // State untuk input pengguna
+  const [chatHistory, setChatHistory] = useState([]); // State untuk menyimpan riwayat chat
+  const [loadingIndex, setLoadingIndex] = useState(null); // State untuk menampilkan loading index
 
-  const handleInputChange = (e) => setQuery(e.target.value);
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
 
   const handleSendQuery = async () => {
+    if (!query.trim()) return; // Cegah input kosong
+
     const options = {
       method: "POST",
-      url: "https://chatgpt-gpt4-ai-chatbot.p.rapidapi.com/ask",
+      url: "https://copilot5.p.rapidapi.com/copilot",
       headers: {
-        "x-rapidapi-key": "96dfa92815mshd651d70c242f75bp1d4073jsn3437b8949e42",
-        "x-rapidapi-host": "chatgpt-gpt4-ai-chatbot.p.rapidapi.com",
+        "x-rapidapi-key": "50a290743cmshf2a9ecc5f745e31p12b080jsn14347dd8e156",
+        "x-rapidapi-host": "copilot5.p.rapidapi.com",
         "Content-Type": "application/json",
       },
       data: {
-        query: query,
+        message: query,
+        conversation_id: null,
+        tone: "BALANCED",
+        markdown: false,
+        photo_url: null,
       },
     };
 
+    // Tambahkan pesan pengguna ke chatHistory sebelum request API
+    setChatHistory((prev) => [
+      ...prev,
+      { query, response: "", timestamp: new Date().toISOString() },
+    ]);
+
+    const currentIndex = chatHistory.length; // Get the index of the current message
+    setLoadingIndex(currentIndex); // Set loading index
+
     try {
+      // Set loading state
       const response = await axios.request(options);
-      setResponseData(response.data);
-      setChatHistory((prev) => [
-        ...prev,
-        { query, response: response.data.response },
-      ]);
-      setQuery(""); // Clear input after sending
+      const { message } = response.data.data;
+
+      // Tambahkan respons bot ke chatHistory
+      setChatHistory((prev) => {
+        const newHistory = [...prev];
+        newHistory[currentIndex] = {
+          query: newHistory[currentIndex].query,
+          response: message,
+          timestamp: new Date().toISOString(),
+        };
+        return newHistory;
+      });
+
+      setQuery(""); // Bersihkan input setelah mengirim
     } catch (error) {
       console.error("Error fetching data:", error);
+
+      // Capture error message to display in chat history
+      const errorMessage = error.response
+        ? error.response.data.message
+        : "An error occurred";
+
+      // Tambahkan error ke chatHistory
+      setChatHistory((prev) => {
+        const newHistory = [...prev];
+        newHistory[currentIndex] = {
+          query: newHistory[currentIndex].query,
+          response: errorMessage, // Display error message
+          timestamp: new Date().toISOString(),
+        };
+        return newHistory;
+      });
+    } finally {
+      // Reset loading index
+      setLoadingIndex(null);
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
-        ChatGPT Chat
-      </h1>
+    <div className="flex flex-col h-full md:h-screen bg-[#0F172A] py-4">
+      <Navbar />
 
-      <div className="flex items-center space-x-4 mb-4">
-        <input
-          type="text"
-          className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Type your question..."
-          value={query}
-          onChange={handleInputChange}
-        />
-        <button
-          onClick={handleSendQuery}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-        >
-          Send
-        </button>
-      </div>
+      <main className="flex-grow flex">
+        <div className="w-full max-w-2xl mx-auto p-4 flex flex-col">
+          {/* Bagian Chat History */}
+          <div className="flex-1 overflow-y-auto bg-white rounded-lg shadow-md p-4 ">
+            <h2 className="text-xl font-semibold mb-4 text-gray-700">
+              Chat History
+            </h2>
+            <div className="space-y-4 p-4 bg-gray-50 dark:bg-gray-900 h-[500px] md:h-[95%] xl:h-[90%] overflow-y-auto rounded-lg shadow-md">
+              {chatHistory.map((chat, index) => (
+                <div key={index} className="space-y-2">
+                  {/* Query (Pesan pengguna) */}
+                  {chat.query && (
+                    <div className="flex justify-end">
+                      <div className="max-w-xs p-3 rounded-2xl shadow-md bg-blue-500 text-white rounded-br-none">
+                        <p className="text-sm">{chat.query}</p>
+                        <p className="text-xs mt-2 text-gray-300 text-right">
+                          {new Date(chat.timestamp).toLocaleTimeString()}
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
-      <div className="bg-white p-4 rounded-lg shadow-md">
-        <h2 className="text-xl font-semibold mb-4 text-gray-700">
-          Chat History
-        </h2>
-
-        <div className="space-y-4">
-          {chatHistory.map((chat, index) => (
-            <div key={index} className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-sm font-semibold text-gray-600">
-                <strong>Query:</strong> {chat.query}
-              </p>
-              <p className="text-sm text-gray-800 mt-1">
-                <strong>Response:</strong> {chat.response}
-              </p>
+                  {/* Response (Pesan Bot/Sistem) */}
+                  {loadingIndex === index ? (
+                    <div className="flex justify-start">
+                      <div className="max-w-xs p-3 rounded-2xl shadow-md bg-gray-200 dark:bg-gray-700 dark:text-white rounded-bl-none">
+                        <p className="text-sm">Loading...</p>
+                      </div>
+                    </div>
+                  ) : (
+                    chat.response && (
+                      <div className="flex justify-start">
+                        <div
+                          className={`max-w-xs p-3 rounded-2xl shadow-md ${
+                            chat.query
+                              ? "bg-gray-200 dark:bg-gray-700 dark:text-white"
+                              : "bg-red-200 dark:bg-red-700"
+                          } rounded-bl-none`}
+                        >
+                          <p className="text-sm">{chat.response}</p>
+                          <p className="text-xs mt-2 text-gray-400 text-right">
+                            {new Date(chat.timestamp).toLocaleTimeString()}
+                          </p>
+                        </div>
+                      </div>
+                    )
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Input dan Tombol Kirim */}
+          <div className="mt-4  flex items-center bg-white dark:bg-gray-800 p-2 rounded-full shadow-md">
+            <textarea
+              className="flex-1 h-12 max-h-32 resize-none overflow-y-auto px-4 py-3 text-gray-700 dark:text-white bg-transparent focus:outline-none"
+              placeholder="Type a message..."
+              value={query}
+              onChange={handleInputChange}
+              rows={1}
+            />
+            <button
+              onClick={handleSendQuery}
+              className="ml-2 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-colors duration-300"
+            >
+              <FiSend size={20} />
+            </button>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
