@@ -26,7 +26,7 @@ function Beranda() {
   };
 
   return (
-    <div className="bg-[#20125f] blur(10%) min-h-screen">
+    <div className="bg-[#370e58] blur(10%) min-h-screen">
       <div className="text-slate-200">
         <Navbar />
         <Welcome />

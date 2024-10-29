@@ -94,7 +94,7 @@ const Navbar = () => {
             onClick={handleSidebar}
           >
             <div
-              className="absolute top-0 right-0 w-54 h-auto bg-[#14203D] shadow-lg p-6 rounded-l-xl transform transition-transform duration-300 ease-in-out"
+              className="absolute top-0 right-0 w-54 h-auto bg-[#1f143d] shadow-lg p-6 rounded-l-xl transform transition-transform duration-300 ease-in-out"
               style={{
                 transform: sidebarVisible
                   ? "translateX(1%)"
