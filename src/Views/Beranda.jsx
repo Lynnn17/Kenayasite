@@ -3,18 +3,15 @@ import Welcome from "../Component/Beranda/Welcome";
 import Navbar from "../Component/Navbar";
 import Deskripsi from "../Component/Beranda/Deskripsi";
 import Footer from "../Component/Footer";
-import backsound from "../assets/backsound2.mp3"; // Import the backsound file
+imporimport backsound from "../assets/backsound2.m file
 
 function Beranda() {
-  const [isPlaying, setIsPlaying] = useState(false); // State initial is false, meaning music is paused at first
+  const [isPlaying, setIsPlaying] = useState(falfirst
 
-  useEffect(() => {
-    // Ensure audio is paused initially
+  useEffect(() =ially
     const audio = document.getElementById("background-audio");
     audio.pause();
-  }, []);
-
-  // Function to toggle play/pause
+  },])pause
   const toggleMusic = () => {
     const audio = document.getElementById("background-audio");
     if (isPlaying) {
@@ -22,7 +19,7 @@ function Beranda() {
     } else {
       audio.play();
     }
-    setIsPlaying(!isPlaying); // Toggle the state
+    setIsPlaying(!isPlaystate
   };
 
   return (
@@ -51,12 +48,3 @@ function Beranda() {
       >
         {isPlaying ? (
           <i className="fas fa-pause fa-2x"></i>
-        ) : (
-          <i className="fas fa-play fa-2x"></i>
-        )}
-      </button>
-    </div>
-  );
-}
-
-export default Beranda;
