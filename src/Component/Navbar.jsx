@@ -46,14 +46,9 @@ const Navbar = () => {
 
         {/* Links for Desktop */}
         <div className="hover-[#17A9E8] hidden md:flex items-center gap-8 text-lg text-white font-mono">
-          <Link
-            to="/"
-            smooth={true}
-            duration={1000}
-            className="hover:text-[#6eacda] transition duration-300"
-          >
+          <a href="/" className="hover:text-[#6eacda] transition duration-300">
             Beranda
-          </Link>
+          </a>
           <Link
             to="layanan"
             smooth={true}

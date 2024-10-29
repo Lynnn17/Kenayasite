@@ -53,64 +53,64 @@ const Klien = () => {
           {[
             {
               name: "Gumi",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "Shopee",
+              role: "Mitra",
               feedback: "Website berkualitas.",
               image: klien1, // Add John's profile image
             },
             {
               name: "Itis",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "Tokopedia",
+              role: "Client",
               feedback: "Pelayanan ramah, responsif, revisi cepat.",
               image: klien2, // Add Jane's profile image
             },
             {
               name: "Plufy",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "Lazada",
+              role: "Client",
               feedback: "Website mengesankan, keahlian beragam proyek.",
               image: klien3, // Add Emily's profile image
             },
             {
               name: "Qyuu",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "Blibli",
+              role: "Mitra",
               feedback: "Kualitas unggul, bisnis profit.",
               image: klien4, // Add Michael's profile image
             },
             {
               name: "Alex",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "Bukalapak",
+              role: "Client",
               feedback: "Efisien, tepat waktu, sesuai brief.",
               image: klien5, // Add Sara's profile image
             },
             {
               name: "Anggam",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "MatahariMall",
+              role: "Mitra",
               feedback: "Efisien, tepat waktu, sesuai brief.",
               image: klien6, // Add Sara's profile image
             },
             {
               name: "Muti",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "Plasa",
+              role: "Mitra",
               feedback: "Efisien, tepat waktu, sesuai brief.",
               image: klien7, // Add Sara's profile image
             },
             {
               name: "Gang",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "Blanja",
+              role: "Client",
               feedback: "Efisien, tepat waktu, sesuai brief.",
               image: klien8, // Add Sara's profile image
             },
             {
               name: "Octo",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
+              company: "Tokobagus",
+              role: "Mitra",
               feedback: "Efisien, tepat waktu, sesuai brief.",
               image: klien9, // Add Sara's profile image
             },

@@ -5,7 +5,7 @@ import { Element } from "react-scroll";
 
 const packages = [
   {
-    title: "Paket START UP",
+    title: "Paket START-UP",
     oldPrice: "999,000",
     newPrice: "799,000",
     features: [
@@ -17,10 +17,10 @@ const packages = [
       "Laporan Kinerja Bulanan.",
       "Bebas Konsultasi Selamanya.",
     ],
-    link: "https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com",
+    link: `https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com`,
   },
   {
-    title: "Paket SCALE UP",
+    title: "Paket E-COMMERCE",
     oldPrice: "1,599,000",
     newPrice: "1,249,000",
     features: [
@@ -116,7 +116,20 @@ const Promo = () => {
                   {pkg.newPrice}
                 </p>
                 <a
-                  href={pkg.link}
+                  href={
+                    pkg.link +
+                    `&su=${encodeURIComponent(
+                      pkg.title
+                    )}&body=${encodeURIComponent(
+                      `Halo,\n\nSaya ingin mengabil ${
+                        pkg.title
+                      }.\n\nDetail:\n- Harga : ${
+                        pkg.newPrice
+                      }\n\nFitur:\n${pkg.features.join(
+                        "\n"
+                      )}\n\nTerima kasih.\n`
+                    )}`
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm transition-all duration-500 ease-in-out hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg"
@@ -146,8 +159,10 @@ const Promo = () => {
             </button>
             {open === 1 && (
               <div className="pb-4 text-gray-400">
-                Kenayasite menyediakan berbagai layanan seperti, Optimisasi Mesin Pencari (SEO), Pemeliharaan Website, Keamanan Website, dan Pembuatan Website berkualitas tinggi yang sesuai dengan kebutuhan
-                bisnis Anda.
+                Kenayasite menyediakan berbagai layanan seperti, Optimisasi
+                Mesin Pencari (SEO), Pemeliharaan Website, Keamanan Website, dan
+                Pembuatan Website berkualitas tinggi yang sesuai dengan
+                kebutuhan bisnis Anda.
               </div>
             )}
           </div>
@@ -162,7 +177,17 @@ const Promo = () => {
             </button>
             {open === 2 && (
               <div className="pb-4 text-gray-400">
-                Proses pembuatan website di Kenayasite dimulai dengan sesi konsultasi untuk memahami visi dan kebutuhan unik bisnis Anda. Setelah itu, tim kami merancang konsep visual dan fungsional website, memberikan Anda pratinjau untuk memastikan semua aspek sesuai keinginan. Setelah disetujui, kami mulai tahap pengembangan, dengan menambahkan fitur-fitur interaktif, SEO, dan keamanan sesuai paket yang Anda pilih. Website akan melalui tahap uji coba intensif untuk memastikan performa maksimal dan pengalaman pengguna yang nyaman. Akhirnya, website Anda diluncurkan secara resmi, dan Anda tetap mendapat layanan maintenance serta dukungan penuh dari tim kami.
+                Proses pembuatan website di Kenayasite dimulai dengan sesi
+                konsultasi untuk memahami visi dan kebutuhan unik bisnis Anda.
+                Setelah itu, tim kami merancang konsep visual dan fungsional
+                website, memberikan Anda pratinjau untuk memastikan semua aspek
+                sesuai keinginan. Setelah disetujui, kami mulai tahap
+                pengembangan, dengan menambahkan fitur-fitur interaktif, SEO,
+                dan keamanan sesuai paket yang Anda pilih. Website akan melalui
+                tahap uji coba intensif untuk memastikan performa maksimal dan
+                pengalaman pengguna yang nyaman. Akhirnya, website Anda
+                diluncurkan secara resmi, dan Anda tetap mendapat layanan
+                maintenance serta dukungan penuh dari tim kami.
               </div>
             )}
           </div>
@@ -180,7 +205,15 @@ const Promo = () => {
             </button>
             {open === 3 && (
               <div className="pb-4 text-gray-400">
-                Tentu saja! kami memahami bahwa setiap bisnis memiliki kebutuhan dan preferensi unik, sehingga kami menyediakan layanan kustomisasi penuh untuk website Anda. Mulai dari desain visual, pilihan warna, tata letak, hingga fitur khusus seperti formulir kontak, integrasi media sosial, atau toko online, semua bisa disesuaikan agar sesuai dengan identitas dan visi bisnis Anda. Tim kami akan bekerja sama dengan Anda di setiap tahap, memastikan setiap detail mencerminkan preferensi Anda dengan sempurna.
+                Tentu saja! kami memahami bahwa setiap bisnis memiliki kebutuhan
+                dan preferensi unik, sehingga kami menyediakan layanan
+                kustomisasi penuh untuk website Anda. Mulai dari desain visual,
+                pilihan warna, tata letak, hingga fitur khusus seperti formulir
+                kontak, integrasi media sosial, atau toko online, semua bisa
+                disesuaikan agar sesuai dengan identitas dan visi bisnis Anda.
+                Tim kami akan bekerja sama dengan Anda di setiap tahap,
+                memastikan setiap detail mencerminkan preferensi Anda dengan
+                sempurna.
               </div>
             )}
           </div>
@@ -190,12 +223,21 @@ const Promo = () => {
               className="flex justify-between w-full py-4 text-left focus:outline-none"
               onClick={() => toggle(4)}
             >
-              <span>Apakah Kenayasite juga memberikan Garansi Teknis setelah pemesanan Website diselesaikan?</span>
+              <span>
+                Apakah Kenayasite juga memberikan Garansi Teknis setelah
+                pemesanan Website diselesaikan?
+              </span>
               <span>{open === 4 ? "-" : "+"}</span>
             </button>
             {open === 4 && (
               <div className="pb-4 text-gray-400">
-                Benar! Kenayasite memberikan garansi teknis untuk memastikan website Anda tetap optimal dan aman setelah peluncuran. Dengan garansi teknis ini, Anda mendapatkan dukungan penuh dari tim kami untuk memperbaiki bug, mengatasi kendala teknis, dan melakukan update sistem sesuai kebutuhan selama masa garansi. Kami siap membantu menjaga performa website Anda, memberikan rasa tenang sehingga Anda bisa fokus mengembangkan bisnis.
+                Benar! Kenayasite memberikan garansi teknis untuk memastikan
+                website Anda tetap optimal dan aman setelah peluncuran. Dengan
+                garansi teknis ini, Anda mendapatkan dukungan penuh dari tim
+                kami untuk memperbaiki bug, mengatasi kendala teknis, dan
+                melakukan update sistem sesuai kebutuhan selama masa garansi.
+                Kami siap membantu menjaga performa website Anda, memberikan
+                rasa tenang sehingga Anda bisa fokus mengembangkan bisnis.
               </div>
             )}
           </div>
@@ -206,13 +248,22 @@ const Promo = () => {
               onClick={() => toggle(5)}
             >
               <span>
-                Berapa lama waktu yang dibutuhkan untuk menyelesaikan pesanan Website saya?
+                Berapa lama waktu yang dibutuhkan untuk menyelesaikan pesanan
+                Website saya?
               </span>
               <span>{open === 5 ? "-" : "+"}</span>
             </button>
             {open === 5 && (
               <div className="pb-4 text-gray-400">
-                Waktu penyelesaian pesanan website Anda di Kenaya bervariasi tergantung pada kompleksitas dan fitur yang Anda inginkan. Umumnya, untuk website sederhana, proses pembuatan dapat memakan waktu antara 2 hingga 4 minggu. Namun, untuk website yang lebih kompleks dengan fitur kustom atau integrasi e-commerce, waktu pengerjaan bisa memakan waktu 4 hingga 8 minggu. Kami akan memberikan jadwal yang jelas dan terus memperbarui Anda mengenai kemajuan proyek, sehingga Anda selalu tahu kapan website Anda akan siap diluncurkan.
+                Waktu penyelesaian pesanan website Anda di Kenaya bervariasi
+                tergantung pada kompleksitas dan fitur yang Anda inginkan.
+                Umumnya, untuk website sederhana, proses pembuatan dapat memakan
+                waktu antara 2 hingga 4 minggu. Namun, untuk website yang lebih
+                kompleks dengan fitur kustom atau integrasi e-commerce, waktu
+                pengerjaan bisa memakan waktu 4 hingga 8 minggu. Kami akan
+                memberikan jadwal yang jelas dan terus memperbarui Anda mengenai
+                kemajuan proyek, sehingga Anda selalu tahu kapan website Anda
+                akan siap diluncurkan.
               </div>
             )}
           </div>

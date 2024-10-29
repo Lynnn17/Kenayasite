@@ -66,7 +66,7 @@ const Welcome = () => {
               </p>
               <div className="flex justify-center gap-4">
                 <a
-                  href="https://wa.me/6283112080715"
+                  href="/chatbot"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`font-sans bg-[#17A9E8] text-blue-950 px-6 py-3 font-bold rounded-lg hover:text-white transition-all duration-500 ease-in-out hover:bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg hover:scale-105 hover:text-black transition transform ${
@@ -76,6 +76,18 @@ const Welcome = () => {
                   }`}
                 >
                   Hi Kenaya!
+                </a>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com&su=Order%20Pembuatan%20Website&body=Halo,%0A%0ASaya%20ingin%20memesan%20pembuatan%20website.%20Saya%20harap%20kita%20bisa%20membahas%20lebih%20lanjut%20tentang%20kebutuhan%20dan%20preferensi%20saya.%0A%0ATerima%20kasih!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`font-sans bg-[#17A9E8] text-blue-950 px-6 py-3 font-bold rounded-lg hover:text-white transition-all duration-500 ease-in-out hover:bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg hover:scale-105 hover:text-black transition transform ${
+                    textVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-5"
+                  }`}
+                >
+                  Order Hire!
                 </a>
               </div>
             </div>
