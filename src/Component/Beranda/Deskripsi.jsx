@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from "react";
 import foto4 from "../../assets/gedung1.png";
 import vuejs from "../../assets/vuejs.png";
 import react from "../../assets/react.png";
@@ -12,40 +11,10 @@ import kreatif from "../../assets/ikreatif.png";
 import totalitas from "../../assets/itotality.png";
 import ontime from "../../assets/iontime.png";
 import fastrespon from "../../assets/iresponse.png";
-import klien1 from "../../assets/klien/klien1.jpeg";
-import klien6 from "../../assets/klien/klien6.jpeg";
-import klien2 from "../../assets/klien/klien2.jpeg";
-import klien3 from "../../assets/klien/klien3.jpeg";
-import klien4 from "../../assets/klien/klien4.jpeg";
-import klien5 from "../../assets/klien/klien5.jpeg";
-import klien7 from "../../assets/klien/klien7.jpeg";
-import klien8 from "../../assets/klien/klien8.jpeg";
-import klien9 from "../../assets/klien/klien9.jpeg";
-import Pemesanan from "./Tampilan";
 
 const Deskripsi = () => {
-  const testimonialRef = useRef(null);
-
-  useEffect(() => {
-    const container = testimonialRef.current;
-
-    const scrollTestimonials = () => {
-      if (
-        container.scrollLeft + container.clientWidth >=
-        container.scrollWidth
-      ) {
-        container.scrollTo({ left: 0 });
-      } else {
-        container.scrollBy({ left: 2, behavior: "smooth" });
-      }
-    };
-
-    const intervalId = setInterval(scrollTestimonials, 30);
-    return () => clearInterval(intervalId);
-  }, []);
-
   return (
-    <div className="animated-gradient-bg text-black py-16 px-8 lg:px-16">
+    <div className="">
       {/* Header Section */}
       <div className="max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-28 items-center gap-12">
@@ -61,11 +30,10 @@ const Deskripsi = () => {
             </p>
           </div>
 
-          {/* Image Section */}
           <div className="lg:w-[520px] lg:ml-10">
             <img
               src={foto4}
-              alt="Grafistix Hero"
+              alt="Kenaya Hero"
               className="w-full h-auto rounded-lg shadow-xl hover:scale-105 transition-transform"
             />
           </div>
@@ -75,23 +43,32 @@ const Deskripsi = () => {
       {/* Logo Section */}
       <div className="max-w-screen-xl mx-auto py-8 md:pt-12">
         <div className="grid grid-cols-6 gap-8 justify-center">
-
-          {[react, vuejs, laravel, nodejs, Inkscape, affinity].map((logo, idx) => (
-            <img key={idx} src={logo} alt={`Logo ${idx}`} className="w-24 h-auto transform transition duration-300 hover:scale-110" />
-          ))}
+          {[react, vuejs, laravel, nodejs, Inkscape, affinity].map(
+            (logo, idx) => (
+              <img
+                key={idx}
+                src={logo}
+                alt={`Logo ${idx}`}
+                className="w-24 h-auto transform transition duration-300 hover:scale-110"
+              />
+            )
+          )}
         </div>
         <p className="border border-[#38BDF8] bg-[#E5F6FF] text-[#1D2B50] p-6 rounded-lg flex flex-col items-center justify-center h-24 font-sans text-center text-lg lg:text-xl mt-11">
-          Framework dan Software terbaik yang membantu Kenayasite untuk menghasilkan Website yang Professional dan Interaktif
+          Framework dan Software terbaik yang membantu Kenayasite untuk
+          menghasilkan Website yang Professional dan Interaktif
         </p>
       </div>
 
-      {/* Why Grafistix Section */}
+      {/* Why Kenaya Section */}
       <div className="mt-0 text-center">
         <h2 className="font-bold text-3xl lg:text-5xl mb-5 lg:mb-8 text-[#03346E]">
           Kenapa harus Kenayasite?
         </h2>
         <p className="text-lg lg:text-xl mb-8 lg:mb-12 max-w-2xl mx-auto">
-          Kami adalah pilihan tepat untuk Anda para pebisnis hebat yang membutuhkan website profesional, kreatif, dan berkualitas. Dengan layanan cepat dan hasil yang memuaskan
+          Kami adalah pilihan tepat untuk Anda para pebisnis hebat yang
+          membutuhkan website profesional, kreatif, dan berkualitas. Dengan
+          layanan cepat dan hasil yang memuaskan
         </p>
 
         {/* Features Grid */}
@@ -153,177 +130,6 @@ const Deskripsi = () => {
           ))}
         </div>
       </div>
-
-      <Pemesanan />
-
-      {/* Blog Section with Auto-Scrolling Testimonials */}
-      <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8 mt-16">
-        <div className="text-center mx-auto max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Apa kata klien kami?
-          </h2>
-          <p className="mt-2 text-lg leading-7 text-gray-600">
-            Dengar langsung dari pebisnis hebat yang mempercayai layanan kami.
-          </p>
-        </div>
-
-        <div
-          ref={testimonialRef}
-          className="scroll-pl-6 mt-10 flex space-x-6 overflow-x-auto pb-8 scrollbar-hide"
-          style={{ whiteSpace: "nowrap" }}
-        >
-          {[
-            {
-              name: "Gumi",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Website berkualitas.",
-              image: klien1, // Add John's profile image
-            },
-            {
-              name: "Itis",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Pelayanan ramah, responsif, revisi cepat.",
-              image: klien2, // Add Jane's profile image
-            },
-            {
-              name: "Plufy",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Website mengesankan, keahlian beragam proyek.",
-              image: klien3, // Add Emily's profile image
-            },
-            {
-              name: "Qyuu",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Kualitas unggul, bisnis profit.",
-              image: klien4, // Add Michael's profile image
-            },
-            {
-              name: "Alex",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien5, // Add Sara's profile image
-            },
-            {
-              name: "Anggam",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien6, // Add Sara's profile image
-            },
-            {
-              name: "Muti",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien7, // Add Sara's profile image
-            },
-            {
-              name: "Gang",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien8, // Add Sara's profile image
-            },
-            {
-              name: "Octo",
-              company: "Universitas Negeri Surabaya",
-              role: "Mahasiswa",
-              feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien9, // Add Sara's profile image
-            },
-          ].map((client, index) => (
-            <div
-              key={index}
-              className="min-w-[200px] sm:min-w-[240px] md:min-w-[260px] lg:min-w-[280px] flex-shrink-0 inline-block"
-            >
-              <div className="mx-auto max-w-xs flex flex-col items-center justify-between border rounded-lg p-4 shadow-md space-y-4">
-                <img
-                  src={client.image}
-                  alt={client.name}
-                  className="w-16 h-16 object-cover rounded-full mb-2"
-                />
-                <div className="text-center">
-                  <h3 className="text-sm font-semibold text-gray-900">
-                    {client.name}
-                  </h3>
-                  <p className="text-xs text-gray-500">
-                    {client.role} {client.company}
-                  </p>
-                  <p className="mt-1 text-xs text-gray-600 leading-5">
-                    {client.feedback}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Background Animation Styles */}
-      <style jsx>{`
-        .animated-gradient-bg {
-          background: linear-gradient(
-            45deg,
-            #af8cff,
-            #d8a6ff,
-            #ffffff,
-            #deb8ff
-          );
-          background-size: 400% 400%;
-          animation: gradientAnimation 10s ease infinite;
-        }
-
-        @keyframes gradientAnimation {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .logo-appear-0 {
-          animation-delay: 0.2s;
-        }
-        .logo-appear-1 {
-          animation-delay: 0.4s;
-        }
-        .logo-appear-2 {
-          animation-delay: 0.6s;
-        }
-        .logo-appear-3 {
-          animation-delay: 0.8s;
-        }
-        .logo-appear-4 {
-          animation-delay: 1s;
-        }
-        .logo-appear-5 {
-          animation-delay: 1.2s;
-        }
-
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none; /* Chrome, Safari, and Opera */
-        }
-      `}</style>
     </div>
   );
 };
