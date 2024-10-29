@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import foto4 from "../../assets/gedung1.png";
-import corel from "../../assets/corel.png";
-import ilustrator from "../../assets/ilustrator.png";
-import indesign from "../../assets/indesign.png";
-import netflixLogo from "../../assets/photoshop.png";
+import vuejs from "../../assets/vuejs.png";
+import react from "../../assets/react.png";
+import laravel from "../../assets/laravell.png";
+import nodejs from "../../assets/nodejs.png";
 import Inkscape from "../../assets/Inkscape.png";
 import affinity from "../../assets/affinity.png";
-import poster from "../../assets/poster bawah.png";
 import kualitas from "../../assets/iquliaty.png";
 import profesional from "../../assets/iprofesional.png";
 import kreatif from "../../assets/ikreatif.png";
@@ -68,12 +67,12 @@ const Deskripsi = () => {
       {/* Logo Section */}
       <div className="max-w-screen-xl mx-auto py-8 md:pt-12">
         <div className="grid grid-cols-6 gap-8 justify-center">
-          {[corel, ilustrator, indesign, netflixLogo, Inkscape, affinity].map((logo, idx) => (
+          {[react, vuejs, laravel, nodejs, Inkscape, affinity].map((logo, idx) => (
             <img key={idx} src={logo} alt={`Logo ${idx}`} className="w-24 h-auto transform transition duration-300 hover:scale-110" />
           ))}
         </div>
         <p className="border border-[#38BDF8] bg-[#E5F6FF] text-[#1D2B50] p-6 rounded-lg flex flex-col items-center justify-center h-24 font-sans text-center text-lg lg:text-xl mt-11">
-          Software terbaik yang membantu Grafistix untuk menciptakan Desain dan berinovasi
+          Framework dan Software terbaik yang membantu Kenayasite untuk menghasilkan Website yang Professional dan Interaktif
         </p>
       </div>
 
@@ -81,7 +80,7 @@ const Deskripsi = () => {
       <div className="mt-0 text-center">
         <h2 className="font-bold text-3xl lg:text-5xl mb-5 lg:mb-8 text-[#03346E]">Kenapa harus Kenayasite?</h2>
         <p className="text-lg lg:text-xl mb-8 lg:mb-12 max-w-2xl mx-auto">
-          Kami adalah pilihan tepat untuk Anda para pebisnis hebat yang membutuhkan website profesional, kreatif, dan berkualitas. Dengan layanan cepat dan hasil yang memuaskan.
+          Kami adalah pilihan tepat untuk Anda para pebisnis hebat yang membutuhkan website profesional, kreatif, dan berkualitas. Dengan layanan cepat dan hasil yang memuaskan
         </p>
 
         {/* Features Grid */}
