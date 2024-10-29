@@ -1,5 +1,4 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
-import backgroundImage from "../../assets/bgpemesanan.png";
 import icon from "../../assets/icon.png";
 import { useState } from "react";
 
@@ -93,7 +92,7 @@ const packages = [
   },
 ];
 
-const Tampilan = () => {
+const Pemesanan = () => {
   const [open, setOpen] = useState(null);
 
   const toggle = (index) => {
@@ -185,16 +184,16 @@ const Tampilan = () => {
               className="flex justify-between w-full py-4 text-left focus:outline-none"
               onClick={() => toggle(1)}
             >
-              <span>Layanan apa saja yang ditawarkan oleh Grafistix?</span>
+              <span>Layanan apa saja yang ditawarkan oleh Kenaya?</span>
               <span>{open === 1 ? "-" : "+"}</span>
             </button>
             {open === 1 && (
               <div className="pb-4 text-gray-400">
-                Grafistix menyediakan berbagai layanan desain grafis
-                profesional, termasuk desain logo, desain kustom, pembuatan
-                konten Instagram, dan desain merchandise. Kami fokus pada
-                penyediaan visual kreatif dan berkualitas tinggi yang sesuai
-                dengan kebutuhan bisnis Anda.
+                Kenaya menyediakan berbagai layanan desain grafis profesional,
+                termasuk desain logo, desain kustom, pembuatan konten Instagram,
+                dan desain merchandise. Kami fokus pada penyediaan visual
+                kreatif dan berkualitas tinggi yang sesuai dengan kebutuhan
+                bisnis Anda.
               </div>
             )}
           </div>
@@ -204,7 +203,7 @@ const Tampilan = () => {
               className="flex justify-between w-full py-4 text-left focus:outline-none"
               onClick={() => toggle(2)}
             >
-              <span>Bagaimana proses desain logo di Grafistix?</span>
+              <span>Bagaimana proses desain logo di Kenaya?</span>
               <span>{open === 2 ? "-" : "+"}</span>
             </button>
             {open === 2 && (
@@ -231,11 +230,11 @@ const Tampilan = () => {
             </button>
             {open === 3 && (
               <div className="pb-4 text-gray-400">
-                Tentu saja! Grafistix menawarkan layanan desain kustom di mana
-                kami bekerja sama dengan Anda untuk mewujudkan ide-ide Anda.
-                Baik untuk materi promosi, konten media sosial, atau kemasan
-                produk, kami akan menyesuaikan desain dengan spesifikasi dan
-                gaya merek Anda.
+                Tentu saja! Kenaya menawarkan layanan desain kustom di mana kami
+                bekerja sama dengan Anda untuk mewujudkan ide-ide Anda. Baik
+                untuk materi promosi, konten media sosial, atau kemasan produk,
+                kami akan menyesuaikan desain dengan spesifikasi dan gaya merek
+                Anda.
               </div>
             )}
           </div>
@@ -245,7 +244,7 @@ const Tampilan = () => {
               className="flex justify-between w-full py-4 text-left focus:outline-none"
               onClick={() => toggle(4)}
             >
-              <span>Apakah Grafistix juga mendesain konten Instagram?</span>
+              <span>Apakah Kenaya juga mendesain konten Instagram?</span>
               <span>{open === 4 ? "-" : "+"}</span>
             </button>
             {open === 4 && (
@@ -285,4 +284,4 @@ const Tampilan = () => {
   );
 };
 
-export default Tampilan;
+export default Pemesanan;

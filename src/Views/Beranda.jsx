@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import Welcome from "../Component/Beranda/Welcome";
 import Navbar from "../Component/Navbar";
 import Deskripsi from "../Component/Beranda/Deskripsi";
+import Pemesanan from "../Component/Beranda/Pemesanan";
+import Klien from "../Component/Beranda/Klien";
 import Footer from "../Component/Footer";
-import backsound from "../assets/backsound2.mp3"; // Import the backsound file
+import backsound from "../assets/backsound2.mp3";
 
 function Beranda() {
-  const [isPlaying, setIsPlaying] = useState(false); // State initial is false, meaning music is paused at first
-
+  const [isPlaying, setIsPlaying] = useState(false);
   useEffect(() => {
-    // Ensure audio is paused initially
     const audio = document.getElementById("background-audio");
     audio.pause();
   }, []);
 
-  // Function to toggle play/pause
   const toggleMusic = () => {
     const audio = document.getElementById("background-audio");
     if (isPlaying) {
@@ -30,7 +29,70 @@ function Beranda() {
       <div className="text-slate-200">
         <Navbar />
         <Welcome />
-        <Deskripsi />
+        <div className="animated-gradient-bg text-black py-16 px-8 lg:px-16">
+          <Deskripsi />
+          <Pemesanan />
+          <Klien />
+          <style jsx>{`
+            .animated-gradient-bg {
+              background: linear-gradient(
+                45deg,
+                #af8cff,
+                #d8a6ff,
+                #ffffff,
+                #deb8ff
+              );
+              background-size: 400% 400%;
+              animation: gradientAnimation 10s ease infinite;
+            }
+
+            @keyframes gradientAnimation {
+              0% {
+                background-position: 0% 50%;
+              }
+              50% {
+                background-position: 100% 50%;
+              }
+              100% {
+                background-position: 0% 50%;
+              }
+            }
+
+            @keyframes fadeIn {
+              0% {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            .logo-appear-0 {
+              animation-delay: 0.2s;
+            }
+            .logo-appear-1 {
+              animation-delay: 0.4s;
+            }
+            .logo-appear-2 {
+              animation-delay: 0.6s;
+            }
+            .logo-appear-3 {
+              animation-delay: 0.8s;
+            }
+            .logo-appear-4 {
+              animation-delay: 1s;
+            }
+            .logo-appear-5 {
+              animation-delay: 1.2s;
+            }
+
+            .scrollbar-hide::-webkit-scrollbar {
+              display: none; /* Chrome, Safari, and Opera */
+            }
+          `}</style>
+        </div>
         <Footer />
       </div>
 
