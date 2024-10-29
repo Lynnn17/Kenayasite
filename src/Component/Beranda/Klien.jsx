@@ -8,6 +8,7 @@ import klien5 from "../../assets/klien/klien5.jpeg";
 import klien7 from "../../assets/klien/klien7.jpeg";
 import klien8 from "../../assets/klien/klien8.jpeg";
 import klien9 from "../../assets/klien/klien9.jpeg";
+import { Element } from "react-scroll";
 const Klien = () => {
   const testimonialRef = useRef(null);
 
@@ -31,7 +32,10 @@ const Klien = () => {
 
   return (
     <>
-      <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8 mt-16">
+      <Element
+        name="klien"
+        className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8 mt-16"
+      >
         <div className="text-center mx-auto max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Apa kata klien kami?
@@ -136,7 +140,7 @@ const Klien = () => {
             </div>
           ))}
         </div>
-      </div>
+      </Element>
     </>
   );
 };

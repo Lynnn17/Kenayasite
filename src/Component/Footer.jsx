@@ -2,6 +2,7 @@ import ig from "../assets/instagram.png";
 import yt from "../assets/youtube.png";
 import linked from "../assets/linked.png";
 import footerBg from "../assets/bgfooter2.png";
+import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -12,12 +13,12 @@ const Footer = () => {
       }}
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <h3 className="text-2xl font-semibold mb-4">Kenayasite</h3>
             <p className="text-sm mb-4">
-              Kami menyediakan solusi pembuatan dan pemeliharaan website yang cepat, interaktif, dan
-              terjangkau dengan jaminan kepuasan.
+              Kami menyediakan solusi pembuatan dan pemeliharaan website yang
+              cepat, interaktif, dan terjangkau dengan jaminan kepuasan.
             </p>
             <p className="text-sm">
               Dapatkan website berkualitas untuk kebutuhan Anda dengan layanan
@@ -25,76 +26,60 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Layanan Kami */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">Layanan Kami</h3>
-            <ul className="space-y-1">
-              {[
-                { name: "Pembuatan Website", icon: "🎨" },
-                { name: "Optimisasi Mesin Pencari", icon: "🌟" },
-                { name: "Pemeliharaan Website", icon: "📱" },
-                { name: "Keamanan Website", icon: "🎁" },
-              ].map((service, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="text-lg">{service.icon}</span>
-                  <a
-                    href="/layanan"
-                    className="ml-3 hover:text-[#6eacda] transition duration-300"
-                  >
-                    {service.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Kontak */}
           <div>
             <h3 className="text-2xl font-semibold mb-4">Kontak</h3>
             <ul className="space-y-1">
-            <li className="flex items-center">
-            <span className="text-lg">✉</span>
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com"
-              className="ml-5 hover:text-[#6eacda] transition duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              bingarpuri@gmail.com
-            </a>
-          </li>
-          <li className="flex items-center">
-            <span className="text-lg">📞</span>
-            <a
-              href="https://wa.me/6282244708683"
-              className="ml-3 hover:text-[#6eacda] transition duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              +62 822-4470-8683
-            </a>
-          </li>
+              <li className="flex items-center">
+                <span className="text-lg">✉</span>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com"
+                  className="ml-5 hover:text-[#6eacda] transition duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  bingarpuri@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <span className="text-lg">📞</span>
+                <a
+                  href="https://wa.me/6282244708683"
+                  className="ml-3 hover:text-[#6eacda] transition duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +62 822-4470-8683
+                </a>
+              </li>
               <li className="flex items-center">
                 <span className="text-lg">📍</span>
-                <a href="https://maps.app.goo.gl/btg9nEiRvHDDporV9" className="hover:text-[#6eacda] transition duration-300 ml-3">Jl. Gubernur Sunandar Priyosudarmo No. 20, Kec. Krian, Kab. Sidoarjo</a>
+                <a
+                  href="https://maps.app.goo.gl/btg9nEiRvHDDporV9"
+                  className="hover:text-[#6eacda] transition duration-300 ml-3"
+                >
+                  Jl. Gubernur Sunandar Priyosudarmo No. 20, Kec. Krian, Kab.
+                  Sidoarjo
+                </a>
               </li>
             </ul>
           </div>
 
           {/* Berlangganan */}
           <div>
-            <h3 className="text-2xl font-semibold mb-4">Berlangganan</h3>
+            <h3 className="text-2xl font-semibold mb-4">Promotion</h3>
             <p className="text-sm mb-4">
-              Dapatkan tips layanan Website, penawaran, dan update terbaru langsung ke
-              inbox Anda.
+              Dapatkan promo layanan Website, penawaran, dan update terbaru.
             </p>
             <div className="group mt-4">
-              <a
-                href="/pemesanan"
+              <Link
+                to="promo"
+                smooth={true}
+                duration={1000}
                 className="inline-flex items-center justify-center px-10 py-2 bg-[#6eacda] text-black font-bold border border-gray-700 hover:bg-blue-700 rounded-full transition-all duration-500 ease-in-out hover:text-white hover:scale-110 hover:bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg"
               >
                 Mulai
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -104,7 +89,8 @@ const Footer = () => {
         {/* Tombol */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-center md:text-left">
-            © {new Date().getFullYear()} PT Kenaya Perkasa TBK. All rights reserved.
+            © {new Date().getFullYear()} PT Kenaya Perkasa TBK. All rights
+            reserved.
           </p>
 
           {/* Social Media */}
@@ -142,15 +128,15 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          
+
           <div className="group mt-4">
-              <a
-                href="https://wa.me/6282244708683"
-                className="inline-flex items-center justify-center px-6 py-2 bg-[#6eacda] text-black font-bold border border-gray-700 rounded-full transition-all duration-500 ease-in-out hover:text-white hover:scale-110 hover:bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg"
-              >
-                Konsultasi Gratis
-              </a>
-            </div>
+            <a
+              href="https://wa.me/6282244708683"
+              className="inline-flex items-center justify-center px-6 py-2 bg-[#6eacda] text-black font-bold border border-gray-700 rounded-full transition-all duration-500 ease-in-out hover:text-white hover:scale-110 hover:bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg"
+            >
+              Konsultasi Gratis
+            </a>
+          </div>
         </div>
       </div>
     </footer>

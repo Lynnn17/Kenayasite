@@ -1,6 +1,7 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
 import icon from "../../assets/icon.png";
 import { useState } from "react";
+import { Element } from "react-scroll";
 
 const packages = [
   {
@@ -92,7 +93,7 @@ const packages = [
   },
 ];
 
-const Pemesanan = () => {
+const Promo = () => {
   const [open, setOpen] = useState(null);
 
   const toggle = (index) => {
@@ -100,7 +101,8 @@ const Pemesanan = () => {
   };
 
   return (
-    <div
+    <Element
+      name="promo"
       className="py-24 sm:py-32 text-white xl:mt-2"
       style={{
         backgroundSize: "cover",
@@ -280,8 +282,8 @@ const Pemesanan = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Element>
   );
 };
 
-export default Pemesanan;
+export default Promo;

@@ -1,10 +1,10 @@
 import logo from "../assets/kenaya.png";
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-
 
   const handleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
@@ -46,30 +46,40 @@ const Navbar = () => {
 
         {/* Links for Desktop */}
         <div className="hover-[#17A9E8] hidden md:flex items-center gap-8 text-lg text-white font-mono">
-          <a href="/" className="hover:text-[#6eacda] transition duration-300">
-            Beranda
-          </a>
-          <a
-            href="/portofolio"
+          <Link
+            to="/"
+            smooth={true}
+            duration={1000}
             className="hover:text-[#6eacda] transition duration-300"
           >
-            Portofolio
-          </a>
-          <a
-            href="/layanan"
+            Beranda
+          </Link>
+          <Link
+            to="layanan"
+            smooth={true}
+            duration={1000}
             className="hover:text-[#6eacda] transition duration-300"
           >
             Layanan
-          </a>
-          <a
-            href="/pemesanan"
+          </Link>
+          <Link
+            to="keunggulan"
+            smooth={true}
+            duration={1000}
             className="hover:text-[#6eacda] transition duration-300"
           >
-            Pemesanan
-          </a>
+            Keunggulan
+          </Link>
+          <Link
+            to="promo"
+            smooth={true}
+            duration={1000}
+            className="hover:text-[#6eacda] transition duration-300"
+          >
+            Promo
+          </Link>
         </div>
 
-        {/* Hamburger Icon for Mobile */}
         <button className="block md:hidden" onClick={handleSidebar}>
           <svg
             className="w-8 h-8 text-white"
@@ -120,7 +130,7 @@ const Navbar = () => {
               </button>
 
               {/* Mobile Links */}
-              <ul className="flex flex-col text-[#FFFFFF] gap-6">  
+              <ul className="flex flex-col text-[#FFFFFF] gap-6">
                 <li>
                   <a
                     href="/"
@@ -131,31 +141,37 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/portofolio"
-                    onClick={handleSidebar}
-                    className="text-lg hover:text-[#6eacda] transition duration-300"
-                  >
-                    Portofolio
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/layanan"
+                  <Link
+                    to="layanan"
+                    smooth={true}
+                    duration={1000}
                     onClick={handleSidebar}
                     className="text-lg hover:text-[#6eacda] transition duration-300"
                   >
                     Layanan
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/pemesanan"
+                  <Link
+                    to="keunggulan"
+                    smooth={true}
+                    duration={1000}
                     onClick={handleSidebar}
                     className="text-lg hover:text-[#6eacda] transition duration-300"
                   >
-                    Pemesanan
-                  </a>
+                    Keunggulan
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="promo"
+                    smooth={true}
+                    duration={1000}
+                    onClick={handleSidebar}
+                    className="text-lg hover:text-[#6eacda] transition duration-300"
+                  >
+                    Promo
+                  </Link>
                 </li>
               </ul>
             </div>

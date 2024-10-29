@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import bgpanjang from '../../assets/bgungu.jpg';
+import React, { useEffect, useState } from "react";
+import bgpanjang from "../../assets/bgungu.jpg";
 
 const Welcome = () => {
   const [dots, setDots] = useState([]);
@@ -26,12 +26,12 @@ const Welcome = () => {
   return (
     <>
       <section
-        className="relative px-6 py-16 md:mt-4 xl:mt-2 lg:py-24 overflow-hidden"
+        className="relative px-6 py-16 -mt-10 md:mt-4 xl:mt-2 lg:py-24 overflow-hidden"
         style={{
           backgroundImage: `url(${bgpanjang})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         {/* Floating dots animation */}
@@ -42,18 +42,27 @@ const Welcome = () => {
             <div className="lg:w-1/2 lg:mt-0">
               <h1
                 className={`text-[40px] md:text-5xl lg:text-6xl font-bold font-sans mb-6 leading-tight transition-opacity duration-1000 ease-out transform ${
-                  textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+                  textVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-5"
                 }`}
               >
                 Website Interaktif, Kinerja Inovatif -{" "}
-                <span className="text-[#38BDF8]">Kenayasite Solusi Terdepan</span>
+                <span className="text-[#38BDF8]">
+                  Kenayasite Solusi Terdepan
+                </span>
               </h1>
               <p
                 className={`font-sans text-slate-400 text-[15px] md:text-[20px] lg:text-1 mb-8 leading-relaxed text-justify transition-opacity duration-1000 ease-out transform ${
-                  textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+                  textVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-5"
                 }`}
               >
-                Platform pelayanan jasa berkualitas, interaktif, dan inovatif untuk memenuhi kebutuhan bisnis Anda. Dapatkan solusi digital yang efektif dan efisien untuk memaksimalkan potensi bisnis Anda.
+                Platform pelayanan jasa berkualitas, interaktif, dan inovatif
+                untuk memenuhi kebutuhan bisnis Anda. Dapatkan solusi digital
+                yang efektif dan efisien untuk memaksimalkan potensi bisnis
+                Anda.
               </p>
               <div className="flex justify-center gap-4">
                 <a
@@ -61,12 +70,13 @@ const Welcome = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`font-sans bg-[#17A9E8] text-blue-950 px-6 py-3 font-bold rounded-lg hover:text-white transition-all duration-500 ease-in-out hover:bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg hover:scale-105 hover:text-black transition transform ${
-                    textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+                    textVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-5"
                   }`}
                 >
                   Hi Kenaya!
                 </a>
-
               </div>
             </div>
           </center>
@@ -79,7 +89,9 @@ const Welcome = () => {
               opacity: 1;
             }
             100% {
-              transform: translateY(-150vh); /* Move up beyond the visible area */
+              transform: translateY(
+                -150vh
+              ); /* Move up beyond the visible area */
               opacity: 0;
             }
           }

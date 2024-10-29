@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Welcome from "../Component/Beranda/Welcome";
 import Navbar from "../Component/Navbar";
 import Deskripsi from "../Component/Beranda/Deskripsi";
-import Pemesanan from "../Component/Beranda/Pemesanan";
+import Promo from "../Component/Beranda/Promo";
 import Klien from "../Component/Beranda/Klien";
 import Footer from "../Component/Footer";
 import backsound from "../assets/backsound2.mp3";
+import Keunggulan from "../Component/Beranda/Keunggulan";
 
 function Beranda() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -31,7 +32,8 @@ function Beranda() {
         <Welcome />
         <div className="animated-gradient-bg text-black py-16 px-8 lg:px-16">
           <Deskripsi />
-          <Pemesanan />
+          <Keunggulan />
+          <Promo />
           <Klien />
           <style jsx>{`
             .animated-gradient-bg {
