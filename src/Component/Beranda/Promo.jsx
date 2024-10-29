@@ -5,91 +5,49 @@ import { Element } from "react-scroll";
 
 const packages = [
   {
-    title: "Paket HEMAT",
-    oldPrice: "350.000",
-    newPrice: "120.000",
-    description: (
-      <span>
-        Solusi praktis mulai bisnis kalau budget masih tipis. Pesan melalui
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=refanjie02@gmail.com"
-          className="font-bold text-blue-500"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          refanjie02@gmail.com
-        </a>
-      </span>
-    ),
+    title: "Paket START UP",
+    oldPrice: "999,000",
+    newPrice: "799,000",
     features: [
-      "1 Pilihan Konsep Desain",
-      "Proses Cepat 1-2 Hari",
-      "Revisi Hingga 3x",
-      "File HD (JPG | PNG | PDF)",
-      "File Master EPS (CDR/AI)",
-      "Revisi Hingga 5x.",
-      "2 Pilihan Konsep Desain.",
+      "Website Responsif Max.5 Halaman",
+      "Optimasi SEO Dasar",
+      "Maintenance 1x Sebulan",
+      "Standard Website Security",
+      "GUARANTEE Teknis Hingga 3 Bulan",
+      "Laporan Kinerja Bulanan.",
+      "Bebas Konsultasi Selamanya.",
     ],
-    link: "https://mail.google.com/mail/?view=cm&fs=1&to=refanjie02@gmail.com",
+    link: "https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com",
   },
   {
-    title: "Paket CERMAT",
-    oldPrice: "420.000",
-    newPrice: "220.000",
-    description: (
-      <span>
-        Bisa punya pilihan, meski modal masih pas-pasan. Pesan melalui
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=refanjie02@gmail.com"
-          className="font-bold text-blue-500"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          refanjie02@gmail.com
-        </a>
-      </span>
-    ),
+    title: "Paket SCALE UP",
+    oldPrice: "1,599,000",
+    newPrice: "1,249,000",
     features: [
-      "2 Pilihan Konsep Desain",
-      "Proses Cepat 1-2 Hari",
-      "Revisi Hingga 5x",
-      "File HD (JPG | PNG | PDF)",
-      "File Master EPS (CDR/AI)",
-      "Proses Instan 1-24 Jam.",
-      "Bebas Revisi Sepuasnya.",
+      "Website Responsif Max.10 Halaman",
+      "Optimasi SEO Lanjutan",
+      "Maintenance 2x Sebulan",
+      "Ekstra Website Security",
+      "Laporan Kinerja Bulanan",
+      "GUARANTEE Teknis Hingga 6 Bulan",
+      "Bebas Konsultasi Selamanya.",
     ],
-    link: "https://mail.google.com/mail/?view=cm&fs=1&to=refanjie02@gmail.com",
+    link: "https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com",
   },
   {
-    title: "Paket KILAT",
-    oldPrice: "620.000",
-    newPrice: "300.000",
-    description: (
-      <span>
-        Solusi andalan, desain berkesan secara instan. Pesan melalui
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=refanjie02@gmail.com"
-          className="font-bold text-blue-500"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          refanjie02@gmail.com
-        </a>
-      </span>
-    ),
+    title: "Paket ENTERPRISE",
+    oldPrice: "2,199,000",
+    newPrice: "1,899,000",
     features: [
-      "2 Pilihan Konsep Desain",
-      "Proses Instan 1-24 Jam",
-      "Prioritas Layanan",
-      "Bebas Revisi Sepuasnya",
-      "Sertifikat Kepemilikan Desain",
-      "File HD (JPG | PNG | PDF)",
-      "File Master EPS (CDR/AI)",
+      "Website Premium",
+      "SEO Pro & Strategi Konten",
+      "Maintenance Bulanan Premium",
+      "Highly Performance Website Security",
+      "Laporan Kinerja Komprehensif",
+      "GUARANTEE Teknis Prioritas Setahun",
+      "Bebas Konsultasi Selamanya",
     ],
-    link: "https://mail.google.com/mail/?view=cm&fs=1&to=refanjie02@gmail.com",
+    link: "https://mail.google.com/mail/?view=cm&fs=1&to=bingarpuri@gmail.com",
   },
 ];
 
@@ -116,7 +74,7 @@ const Promo = () => {
             Harga Spesial
           </h2>
           <p className="text-center mt-6 text-lg text-black text-sm md:px-20">
-            Dapatkan desain grafis profesional dengan harga terjangkau, revisi
+            Dapatkan Website profesional dengan harga terjangkau, revisi
             sepuasnya, dan hasil cepat untuk meningkatkan citra bisnis Anda!
           </p>
         </div>
@@ -135,11 +93,8 @@ const Promo = () => {
                 <ul className="mt-6 space-y-4">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
-                      {feature === "Bebas Revisi Sepuasnya." ||
-                      feature === "Revisi Hingga 5x." ||
-                      feature === "2 Pilihan Konsep Desain." ||
-                      feature === "Proses Instan 1-24 Jam." ||
-                      feature === "3 Pilihan Konsep Desain." ? (
+                      {feature === "Laporan Kinerja Bulanan." ||
+                      feature === "Bebas Konsultasi Selamanya." ? (
                         <img src={icon} alt="Icon" className="h-6 w-6" />
                       ) : (
                         <CheckIcon
@@ -157,7 +112,7 @@ const Promo = () => {
                 <p className="text-sm line-through text-red-500">
                   {pkg.oldPrice}
                 </p>
-                <p className="text-5xl font-bold text-gray-900">
+                <p className="text-4xl font-bold text-gray-900">
                   {pkg.newPrice}
                 </p>
                 <a
@@ -186,15 +141,12 @@ const Promo = () => {
               className="flex justify-between w-full py-4 text-left focus:outline-none"
               onClick={() => toggle(1)}
             >
-              <span>Layanan apa saja yang ditawarkan oleh Kenaya?</span>
+              <span>Layanan apa saja yang ditawarkan oleh Kenayasite?</span>
               <span>{open === 1 ? "-" : "+"}</span>
             </button>
             {open === 1 && (
               <div className="pb-4 text-gray-400">
-                Kenaya menyediakan berbagai layanan desain grafis profesional,
-                termasuk desain logo, desain kustom, pembuatan konten Instagram,
-                dan desain merchandise. Kami fokus pada penyediaan visual
-                kreatif dan berkualitas tinggi yang sesuai dengan kebutuhan
+                Kenayasite menyediakan berbagai layanan seperti, Optimisasi Mesin Pencari (SEO), Pemeliharaan Website, Keamanan Website, dan Pembuatan Website berkualitas tinggi yang sesuai dengan kebutuhan
                 bisnis Anda.
               </div>
             )}
@@ -205,16 +157,12 @@ const Promo = () => {
               className="flex justify-between w-full py-4 text-left focus:outline-none"
               onClick={() => toggle(2)}
             >
-              <span>Bagaimana proses desain logo di Kenaya?</span>
+              <span>Bagaimana proses Pembuatan Website di Kenaya?</span>
               <span>{open === 2 ? "-" : "+"}</span>
             </button>
             {open === 2 && (
               <div className="pb-4 text-gray-400">
-                Proses desain logo kami dimulai dengan memahami visi dan
-                nilai-nilai merek Anda. Kami kemudian membuat desain kustom dan
-                unik yang mencerminkan identitas bisnis Anda. Setelah kami
-                menyajikan beberapa konsep, kami akan bekerja sama dengan Anda
-                untuk merevisi hingga desain akhir sesuai dengan harapan Anda.
+                Proses pembuatan website di Kenayasite dimulai dengan sesi konsultasi untuk memahami visi dan kebutuhan unik bisnis Anda. Setelah itu, tim kami merancang konsep visual dan fungsional website, memberikan Anda pratinjau untuk memastikan semua aspek sesuai keinginan. Setelah disetujui, kami mulai tahap pengembangan, dengan menambahkan fitur-fitur interaktif, SEO, dan keamanan sesuai paket yang Anda pilih. Website akan melalui tahap uji coba intensif untuk memastikan performa maksimal dan pengalaman pengguna yang nyaman. Akhirnya, website Anda diluncurkan secara resmi, dan Anda tetap mendapat layanan maintenance serta dukungan penuh dari tim kami.
               </div>
             )}
           </div>
@@ -225,18 +173,14 @@ const Promo = () => {
               onClick={() => toggle(3)}
             >
               <span>
-                Apakah saya bisa mendapatkan desain yang disesuaikan dengan
+                Apakah saya bisa mendapatkan Website yang disesuaikan dengan
                 preferensi saya?
               </span>
               <span>{open === 3 ? "-" : "+"}</span>
             </button>
             {open === 3 && (
               <div className="pb-4 text-gray-400">
-                Tentu saja! Kenaya menawarkan layanan desain kustom di mana kami
-                bekerja sama dengan Anda untuk mewujudkan ide-ide Anda. Baik
-                untuk materi promosi, konten media sosial, atau kemasan produk,
-                kami akan menyesuaikan desain dengan spesifikasi dan gaya merek
-                Anda.
+                Tentu saja! kami memahami bahwa setiap bisnis memiliki kebutuhan dan preferensi unik, sehingga kami menyediakan layanan kustomisasi penuh untuk website Anda. Mulai dari desain visual, pilihan warna, tata letak, hingga fitur khusus seperti formulir kontak, integrasi media sosial, atau toko online, semua bisa disesuaikan agar sesuai dengan identitas dan visi bisnis Anda. Tim kami akan bekerja sama dengan Anda di setiap tahap, memastikan setiap detail mencerminkan preferensi Anda dengan sempurna.
               </div>
             )}
           </div>
@@ -246,15 +190,12 @@ const Promo = () => {
               className="flex justify-between w-full py-4 text-left focus:outline-none"
               onClick={() => toggle(4)}
             >
-              <span>Apakah Kenaya juga mendesain konten Instagram?</span>
+              <span>Apakah Kenayasite juga memberikan Garansi Teknis setelah pemesanan Website diselesaikan?</span>
               <span>{open === 4 ? "-" : "+"}</span>
             </button>
             {open === 4 && (
               <div className="pb-4 text-gray-400">
-                Benar! Kami membuat konten Instagram yang menarik dan visual
-                yang estetis, termasuk postingan, cerita, dan highlights. Desain
-                kami dirancang untuk membantu Anda terhubung dengan audiens dan
-                memperkuat brand Anda di media sosial.
+                Benar! Kenayasite memberikan garansi teknis untuk memastikan website Anda tetap optimal dan aman setelah peluncuran. Dengan garansi teknis ini, Anda mendapatkan dukungan penuh dari tim kami untuk memperbaiki bug, mengatasi kendala teknis, dan melakukan update sistem sesuai kebutuhan selama masa garansi. Kami siap membantu menjaga performa website Anda, memberikan rasa tenang sehingga Anda bisa fokus mengembangkan bisnis.
               </div>
             )}
           </div>
@@ -265,18 +206,13 @@ const Promo = () => {
               onClick={() => toggle(5)}
             >
               <span>
-                Berapa lama waktu yang dibutuhkan untuk menerima desain saya?
+                Berapa lama waktu yang dibutuhkan untuk menyelesaikan pesanan Website saya?
               </span>
               <span>{open === 5 ? "-" : "+"}</span>
             </button>
             {open === 5 && (
               <div className="pb-4 text-gray-400">
-                Waktu pengerjaan tergantung pada tingkat kompleksitas proyek.
-                Untuk desain logo standar, prosesnya biasanya memakan waktu
-                sekitar 5-7 hari kerja. Untuk desain custom, konten media
-                sosial, atau merchandise, kami akan memberikan perkiraan waktu
-                yang lebih akurat setelah mendiskusikan detail proyek dengan
-                Anda.
+                Waktu penyelesaian pesanan website Anda di Kenaya bervariasi tergantung pada kompleksitas dan fitur yang Anda inginkan. Umumnya, untuk website sederhana, proses pembuatan dapat memakan waktu antara 2 hingga 4 minggu. Namun, untuk website yang lebih kompleks dengan fitur kustom atau integrasi e-commerce, waktu pengerjaan bisa memakan waktu 4 hingga 8 minggu. Kami akan memberikan jadwal yang jelas dan terus memperbarui Anda mengenai kemajuan proyek, sehingga Anda selalu tahu kapan website Anda akan siap diluncurkan.
               </div>
             )}
           </div>
