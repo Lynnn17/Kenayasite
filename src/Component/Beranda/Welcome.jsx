@@ -5,22 +5,20 @@ const Welcome = () => {
   const [dots, setDots] = useState([]);
   const [textVisible, setTextVisible] = useState(false);
 
-  // Create random dots
   useEffect(() => {
-    const dotCount = 35; // Number of dots
+    const dotCount = 35;
     const dotElements = [];
     for (let i = 0; i < dotCount; i++) {
-      const delay = Math.random() * 8; // Random delay for each dot
-      const left = Math.random() * 100; // Random position across the width
-      const size = Math.random() * 4 + 2; // Random size of the dots
+      const delay = Math.random() * 8;
+      const left = Math.random() * 100;
+      const size = Math.random() * 4 + 2;
       dotElements.push({ delay, left, size });
     }
     setDots(dotElements);
 
-    // Trigger text animation on component load
     setTimeout(() => {
       setTextVisible(true);
-    }, 300); // Delay before text appears
+    }, 300);
   }, []);
 
   return (
@@ -34,10 +32,7 @@ const Welcome = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Floating dots animation */}
-
         <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-6 lg:px-16">
-          {/* Text Section */}
           <center>
             <div className="lg:w-1/2 lg:mt-0">
               <h1

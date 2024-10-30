@@ -11,10 +11,8 @@ import { Element } from "react-scroll";
 const Deskripsi = () => {
   return (
     <Element name="layanan">
-      {/* Header Section */}
       <div className="max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-28 items-center gap-12">
-          {/* Text Section */}
           <div className="lg:pl-14">
             <h1 className="font-helvetica font-bold text-5xl lg:text-6xl leading-tight mb-4 lg:mb-5 text-[#0D255E]">
               Pelayanan Jasa Pembuatan dan Pemeliharaan Website
@@ -35,8 +33,6 @@ const Deskripsi = () => {
           </div>
         </div>
       </div>
-
-      {/* Logo Section */}
       <div className="max-w-screen-xl mx-auto py-8 md:pt-12">
         <div className="grid grid-cols-6 gap-8 justify-center">
           {[react, vuejs, laravel, nodejs, Inkscape, affinity].map(

@@ -9,7 +9,7 @@ const Footer = () => {
     <footer
       className="text-justify bg-cover bg-center text-white py-10 px-8 lg:px-16"
       style={{
-        backgroundImage: `url(${footerBg})`, // Menggunakan gambar sebagai background
+        backgroundImage: `url(${footerBg})`,
       }}
     >
       <div className="max-w-screen-xl mx-auto">
@@ -26,7 +26,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Kontak */}
           <div>
             <h3 className="text-2xl font-semibold mb-4">Kontak</h3>
             <ul className="space-y-1">
@@ -64,8 +63,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Berlangganan */}
           <div>
             <h3 className="text-2xl font-semibold mb-4">Promotion</h3>
             <p className="text-sm mb-4">
@@ -86,14 +83,12 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 my-8"></div>
 
-        {/* Tombol */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-center md:text-left">
             © {new Date().getFullYear()} PT Kenaya Perkasa TBK. All rights
             reserved.
           </p>
 
-          {/* Social Media */}
           <ul className="flex space-x-6">
             {[
               {

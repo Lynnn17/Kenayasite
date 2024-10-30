@@ -10,16 +10,13 @@ const Navbar = () => {
     setSidebarVisible(!sidebarVisible);
   };
 
-  // Scroll handler to hide/show navbar
   useEffect(() => {
     let lastScrollTop = 0;
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
       if (currentScrollTop > lastScrollTop) {
-        // Scrolling down
         setIsHidden(true);
       } else {
-        // Scrolling up
         setIsHidden(false);
       }
       lastScrollTop = currentScrollTop;
@@ -38,13 +35,11 @@ const Navbar = () => {
           isHidden ? "-translate-y-full" : "translate-y-0"
         }`}
       >
-        {/* Logo Section */}
         <div className="flex items-center">
           <img className="w-[30px]" src={logo} alt="Logo" />
           <span className="ml-3 text-xl font-bold text-white">Kenayasite</span>
         </div>
 
-        {/* Links for Desktop */}
         <div className="hover-[#17A9E8] hidden md:flex items-center gap-8 text-lg text-white font-mono">
           <a href="/" className="hover:text-[#6eacda] transition duration-300">
             Beranda
@@ -92,7 +87,6 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* Sidebar for Mobile */}
         {sidebarVisible && (
           <aside
             className="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out"
@@ -106,7 +100,6 @@ const Navbar = () => {
                   : "translateX(100%)",
               }}
             >
-              {/* Close Button */}
               <button className="flex justify-end mb-4" onClick={handleSidebar}>
                 <svg
                   className="w-8 h-8 text-[#D9F0FF]"
@@ -124,7 +117,6 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {/* Mobile Links */}
               <ul className="flex flex-col text-[#FFFFFF] gap-6">
                 <li>
                   <a

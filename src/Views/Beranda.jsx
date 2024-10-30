@@ -22,7 +22,7 @@ function Beranda() {
     } else {
       audio.play();
     }
-    setIsPlaying(!isPlaying); // Toggle the state
+    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -98,13 +98,11 @@ function Beranda() {
         <Footer />
       </div>
 
-      {/* Audio element for background sound */}
       <audio id="background-audio" loop>
         <source src={backsound} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 
-      {/* Play/Pause Button */}
       <button
         onClick={toggleMusic}
         className="fixed bottom-5 right-5 bg-transparent text-white px-3 py-1 rounded-full shadow-lg hover:bg-white hover:text-indigo-600 transition"

@@ -67,7 +67,6 @@ const Promo = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Pilihan Paket */}
       <div className="mx-auto px-5 md:px-10 xl:px-8 md:-mt-12 xl:-mt-10">
         <div className="mx-auto sm:text-center">
           <h2 className="text-center text-3xl font-bold tracking-tight  text-4xl xl:text-5xl text-[#0D255E]">
@@ -79,7 +78,6 @@ const Promo = () => {
           </p>
         </div>
 
-        {/* Tiga Paket */}
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 mx-2 xl:mx-8">
           {packages.map((pkg) => (
             <div
@@ -142,13 +140,11 @@ const Promo = () => {
         </div>
       </div>
 
-      {/* FAQ */}
       <div className="border border-[#7b50c2] bg-[#E5F6FF] text-[#1D2B50] hover:bg-[#eaeefd]  rounded-xl  mt-16 mx-6 mb-4 md:mx-10 md:-mb-8 md:mt-24 py-10 px-4 md:px-8 xl:mx-14 xl:px-12">
         <h2 className="text-center text-3xl font-bold mb-8">
           Jawaban dari semua pertanyaan
         </h2>
         <div className="mx-auto px-4">
-          {/* FAQ 1 */}
           <div className="border-b border-gray-700">
             <button
               className="flex justify-between w-full py-4 text-left focus:outline-none"
@@ -166,7 +162,6 @@ const Promo = () => {
               </div>
             )}
           </div>
-          {/* FAQ 2 */}
           <div className="border-b border-gray-700">
             <button
               className="flex justify-between w-full py-4 text-left focus:outline-none"
@@ -191,7 +186,6 @@ const Promo = () => {
               </div>
             )}
           </div>
-          {/* FAQ 3 */}
           <div className="border-b border-gray-700">
             <button
               className="flex justify-between w-full py-4 text-left focus:outline-none"
@@ -217,7 +211,6 @@ const Promo = () => {
               </div>
             )}
           </div>
-          {/* FAQ 4 */}
           <div className="border-b border-gray-700">
             <button
               className="flex justify-between w-full py-4 text-left focus:outline-none"
@@ -241,7 +234,6 @@ const Promo = () => {
               </div>
             )}
           </div>
-          {/* FAQ 5 */}
           <div className="border-b border-gray-700">
             <button
               className="flex justify-between w-full py-4 text-left focus:outline-none"

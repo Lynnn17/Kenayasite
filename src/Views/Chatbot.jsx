@@ -4,18 +4,19 @@ import { FiSend } from "react-icons/fi";
 import axios from "axios";
 
 const Chatbot = () => {
-  const [query, setQuery] = useState(""); // State untuk input pengguna
-  const [chatHistory, setChatHistory] = useState([]); // State untuk menyimpan riwayat chat
-  const [loadingIndex, setLoadingIndex] = useState(null); // State untuk menampilkan loading index
-  const chatContainerRef = useRef(null); // Ref untuk container chat
-  const lastUserMessageIndexRef = useRef(null); // Ref untuk menyimpan index pesan pengguna terakhir
+  const [query, setQuery] = useState("");
+  const [chatHistory, setChatHistory] = useState([]);
+  const [loadingIndex, setLoadingIndex] = useState(null);
+  const chatContainerRef = useRef(null);
+  const lastUserMessageIndexRef = useRef(null);
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
+    S;
   };
 
   const handleSendQuery = async () => {
-    if (!query.trim()) return; // Cegah input kosong
+    if (!query.trim()) return;
 
     const options = {
       method: "POST",
@@ -34,21 +35,19 @@ const Chatbot = () => {
       },
     };
 
-    // Tambahkan pesan pengguna ke chatHistory sebelum request API
     setChatHistory((prev) => [
       ...prev,
       { query, response: "", timestamp: new Date().toISOString() },
     ]);
 
-    const currentIndex = chatHistory.length; // Get the index of the current message
-    lastUserMessageIndexRef.current = currentIndex; // Set last user message index
-    setLoadingIndex(currentIndex); // Set loading index
+    const currentIndex = chatHistory.length;
+    lastUserMessageIndexRef.current = currentIndex;
+    setLoadingIndex(currentIndex);
 
     try {
       const response = await axios.request(options);
       const { message } = response.data.data;
 
-      // Tambahkan respons bot ke chatHistory
       setChatHistory((prev) => {
         const newHistory = [...prev];
         newHistory[currentIndex] = {
@@ -59,45 +58,39 @@ const Chatbot = () => {
         return newHistory;
       });
 
-      setQuery(""); // Bersihkan input setelah mengirim
+      setQuery("");
     } catch (error) {
       console.error("Error fetching data:", error);
 
-      // Capture error message to display in chat history
       const errorMessage = error ? error.message : "An error occurred";
 
-      // Tambahkan error ke chatHistory
       setChatHistory((prev) => {
         const newHistory = [...prev];
         newHistory[currentIndex] = {
           query: newHistory[currentIndex].query,
-          response: errorMessage, // Display error message
+          response: errorMessage,
           timestamp: new Date().toISOString(),
         };
         return newHistory;
       });
     } finally {
-      // Reset loading index
       setLoadingIndex(null);
     }
   };
 
-  // Fungsi untuk menghandle event Enter pada textarea
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault(); // Mencegah newline saat menekan Enter
-      handleSendQuery(); // Panggil fungsi kirim
+      e.preventDefault();
+      handleSendQuery();
     }
   };
 
-  // Mengatur scroll otomatis ke pesan terbaru yang dikirim pengguna setiap kali chatHistory diperbarui
   useEffect(() => {
     if (chatContainerRef.current && lastUserMessageIndexRef.current !== null) {
       const lastUserMessageIndex = lastUserMessageIndexRef.current;
       const lastUserMessageElement =
         chatContainerRef.current.children[lastUserMessageIndex];
 
-      // Scroll ke elemen pesan pengguna terakhir
       if (lastUserMessageElement) {
         lastUserMessageElement.scrollIntoView({ behavior: "smooth" });
       }
@@ -110,18 +103,16 @@ const Chatbot = () => {
 
       <main className="flex-grow flex">
         <div className="w-full max-w-2xl mx-auto p-4 flex flex-col h-full">
-          {/* Bagian Chat History */}
           <div className="flex-1 overflow-y-auto bg-white rounded-lg shadow-md p-4 h-[500px] md:h-[850px] lg:h-[550px] important">
             <h2 className="text-xl font-semibold mb-4 text-gray-700">
               Chat History
             </h2>
             <div
-              ref={chatContainerRef} // Tambahkan ref di sini
+              ref={chatContainerRef}
               className="space-y-4 p-4 bg-gray-50 dark:bg-gray-900 h-[500px] md:h-[850px] lg:h-[550px] overflow-y-auto rounded-lg shadow-md"
             >
               {chatHistory.map((chat, index) => (
                 <div key={index} className="space-y-2">
-                  {/* Query (Pesan pengguna) */}
                   {chat.query && (
                     <div className="flex justify-end">
                       <div className="max-w-xs p-3 rounded-2xl shadow-md bg-blue-500 text-white rounded-br-none">
@@ -133,7 +124,6 @@ const Chatbot = () => {
                     </div>
                   )}
 
-                  {/* Response (Pesan Bot/Sistem) */}
                   {loadingIndex === index ? (
                     <div className="flex justify-start">
                       <div className="max-w-xs p-3 rounded-2xl shadow-md bg-gray-200 dark:bg-gray-700 dark:text-white rounded-bl-none">
@@ -163,14 +153,13 @@ const Chatbot = () => {
             </div>
           </div>
 
-          {/* Input dan Tombol Kirim */}
           <div className="mt-4 flex items-center bg-white dark:bg-gray-800 p-2 rounded-full shadow-md">
             <textarea
               className="flex-1 h-12 max-h-32 resize-none overflow-y-auto px-4 py-3 text-gray-700 dark:text-white bg-transparent focus:outline-none"
               placeholder="Type a message..."
               value={query}
               onChange={handleInputChange}
-              onKeyDown={handleKeyDown} // Tambahkan event handler
+              onKeyDown={handleKeyDown}
               rows={1}
             />
             <button

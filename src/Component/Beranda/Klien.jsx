@@ -56,63 +56,63 @@ const Klien = () => {
               company: "Shopee",
               role: "Mitra",
               feedback: "Website berkualitas.",
-              image: klien1, // Add John's profile image
+              image: klien1,
             },
             {
               name: "Itis",
               company: "Tokopedia",
               role: "Client",
               feedback: "Pelayanan ramah, responsif, revisi cepat.",
-              image: klien2, // Add Jane's profile image
+              image: klien2,
             },
             {
               name: "Plufy",
               company: "Lazada",
               role: "Client",
               feedback: "Website mengesankan, keahlian beragam proyek.",
-              image: klien3, // Add Emily's profile image
+              image: klien3,
             },
             {
               name: "Qyuu",
               company: "Blibli",
               role: "Mitra",
               feedback: "Kualitas unggul, bisnis profit.",
-              image: klien4, // Add Michael's profile image
+              image: klien4,
             },
             {
               name: "Alex",
               company: "Bukalapak",
               role: "Client",
               feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien5, // Add Sara's profile image
+              image: klien5,
             },
             {
               name: "Anggam",
               company: "MatahariMall",
               role: "Mitra",
               feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien6, // Add Sara's profile image
+              image: klien6,
             },
             {
               name: "Muti",
               company: "Plasa",
               role: "Mitra",
               feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien7, // Add Sara's profile image
+              image: klien7,
             },
             {
               name: "Gang",
               company: "Blanja",
               role: "Client",
               feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien8, // Add Sara's profile image
+              image: klien8,
             },
             {
               name: "Octo",
               company: "Tokobagus",
               role: "Mitra",
               feedback: "Efisien, tepat waktu, sesuai brief.",
-              image: klien9, // Add Sara's profile image
+              image: klien9,
             },
           ].map((client, index) => (
             <div
